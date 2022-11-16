@@ -1,0 +1,11 @@
+mutation CreateSeedUsers {
+  insertUser(objects: [{ name: "田中太郎" }, { name: "山田花子" }]) {
+    affected_rows
+    returning {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+  }
+}
