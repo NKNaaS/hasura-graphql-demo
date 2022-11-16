@@ -1,2 +1,3 @@
+- "!include public_file.yaml"
 - "!include public_todo.yaml"
 - "!include public_user.yaml"

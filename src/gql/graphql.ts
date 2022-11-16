@@ -23,6 +23,221 @@ export enum CursorOrdering {
   Desc = 'DESC'
 }
 
+/** columns and relationships of "file" */
+export type File = {
+  __typename?: 'File';
+  createdAt: Scalars['timestamptz'];
+  fileThumbnailUrl?: Maybe<Scalars['String']>;
+  fileUrl: Scalars['String'];
+  id: Scalars['Int'];
+  updatedAt: Scalars['timestamptz'];
+};
+
+/** aggregated selection of "file" */
+export type FileAggregate = {
+  __typename?: 'FileAggregate';
+  aggregate?: Maybe<FileAggregateFields>;
+  nodes: Array<File>;
+};
+
+/** aggregate fields of "file" */
+export type FileAggregateFields = {
+  __typename?: 'FileAggregateFields';
+  avg?: Maybe<FileAvgFields>;
+  count: Scalars['Int'];
+  max?: Maybe<FileMaxFields>;
+  min?: Maybe<FileMinFields>;
+  stddev?: Maybe<FileStddevFields>;
+  stddevPop?: Maybe<FileStddev_PopFields>;
+  stddevSamp?: Maybe<FileStddev_SampFields>;
+  sum?: Maybe<FileSumFields>;
+  varPop?: Maybe<FileVar_PopFields>;
+  varSamp?: Maybe<FileVar_SampFields>;
+  variance?: Maybe<FileVarianceFields>;
+};
+
+
+/** aggregate fields of "file" */
+export type FileAggregateFieldsCountArgs = {
+  columns?: InputMaybe<Array<FileSelectColumn>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
+/** aggregate avg on columns */
+export type FileAvgFields = {
+  __typename?: 'FileAvgFields';
+  id?: Maybe<Scalars['Float']>;
+};
+
+/** Boolean expression to filter rows from the table "file". All fields are combined with a logical 'AND'. */
+export type FileBoolExp = {
+  _and?: InputMaybe<Array<FileBoolExp>>;
+  _not?: InputMaybe<FileBoolExp>;
+  _or?: InputMaybe<Array<FileBoolExp>>;
+  createdAt?: InputMaybe<TimestamptzComparisonExp>;
+  fileThumbnailUrl?: InputMaybe<StringComparisonExp>;
+  fileUrl?: InputMaybe<StringComparisonExp>;
+  id?: InputMaybe<IntComparisonExp>;
+  updatedAt?: InputMaybe<TimestamptzComparisonExp>;
+};
+
+/** unique or primary key constraints on table "file" */
+export enum FileConstraint {
+  /** unique or primary key constraint on columns "id" */
+  FilePkey = 'file_pkey'
+}
+
+/** input type for incrementing numeric columns in table "file" */
+export type FileIncInput = {
+  id?: InputMaybe<Scalars['Int']>;
+};
+
+/** input type for inserting data into table "file" */
+export type FileInsertInput = {
+  createdAt?: InputMaybe<Scalars['timestamptz']>;
+  fileThumbnailUrl?: InputMaybe<Scalars['String']>;
+  fileUrl?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['Int']>;
+  updatedAt?: InputMaybe<Scalars['timestamptz']>;
+};
+
+/** aggregate max on columns */
+export type FileMaxFields = {
+  __typename?: 'FileMaxFields';
+  createdAt?: Maybe<Scalars['timestamptz']>;
+  fileThumbnailUrl?: Maybe<Scalars['String']>;
+  fileUrl?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['Int']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
+};
+
+/** aggregate min on columns */
+export type FileMinFields = {
+  __typename?: 'FileMinFields';
+  createdAt?: Maybe<Scalars['timestamptz']>;
+  fileThumbnailUrl?: Maybe<Scalars['String']>;
+  fileUrl?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['Int']>;
+  updatedAt?: Maybe<Scalars['timestamptz']>;
+};
+
+/** response of any mutation on the table "file" */
+export type FileMutationResponse = {
+  __typename?: 'FileMutationResponse';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int'];
+  /** data from the rows affected by the mutation */
+  returning: Array<File>;
+};
+
+/** on_conflict condition type for table "file" */
+export type FileOnConflict = {
+  constraint: FileConstraint;
+  update_columns?: Array<FileUpdateColumn>;
+  where?: InputMaybe<FileBoolExp>;
+};
+
+/** Ordering options when selecting data from "file". */
+export type FileOrderBy = {
+  createdAt?: InputMaybe<OrderBy>;
+  fileThumbnailUrl?: InputMaybe<OrderBy>;
+  fileUrl?: InputMaybe<OrderBy>;
+  id?: InputMaybe<OrderBy>;
+  updatedAt?: InputMaybe<OrderBy>;
+};
+
+/** primary key columns input for table: file */
+export type FilePkColumnsInput = {
+  id: Scalars['Int'];
+};
+
+/** select columns of table "file" */
+export enum FileSelectColumn {
+  /** column name */
+  CreatedAt = 'createdAt',
+  /** column name */
+  FileThumbnailUrl = 'fileThumbnailUrl',
+  /** column name */
+  FileUrl = 'fileUrl',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  UpdatedAt = 'updatedAt'
+}
+
+/** input type for updating data in table "file" */
+export type FileSetInput = {
+  createdAt?: InputMaybe<Scalars['timestamptz']>;
+  fileThumbnailUrl?: InputMaybe<Scalars['String']>;
+  fileUrl?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['Int']>;
+  updatedAt?: InputMaybe<Scalars['timestamptz']>;
+};
+
+/** aggregate stddev on columns */
+export type FileStddevFields = {
+  __typename?: 'FileStddevFields';
+  id?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate stddev_pop on columns */
+export type FileStddev_PopFields = {
+  __typename?: 'FileStddev_popFields';
+  id?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate stddev_samp on columns */
+export type FileStddev_SampFields = {
+  __typename?: 'FileStddev_sampFields';
+  id?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate sum on columns */
+export type FileSumFields = {
+  __typename?: 'FileSumFields';
+  id?: Maybe<Scalars['Int']>;
+};
+
+/** update columns of table "file" */
+export enum FileUpdateColumn {
+  /** column name */
+  CreatedAt = 'createdAt',
+  /** column name */
+  FileThumbnailUrl = 'fileThumbnailUrl',
+  /** column name */
+  FileUrl = 'fileUrl',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  UpdatedAt = 'updatedAt'
+}
+
+export type FileUpdates = {
+  /** increments the numeric columns with given value of the filtered values */
+  _inc?: InputMaybe<FileIncInput>;
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<FileSetInput>;
+  where: FileBoolExp;
+};
+
+/** aggregate var_pop on columns */
+export type FileVar_PopFields = {
+  __typename?: 'FileVar_popFields';
+  id?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate var_samp on columns */
+export type FileVar_SampFields = {
+  __typename?: 'FileVar_sampFields';
+  id?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate variance on columns */
+export type FileVarianceFields = {
+  __typename?: 'FileVarianceFields';
+  id?: Maybe<Scalars['Float']>;
+};
+
 /** Boolean expression to compare columns of type "Int". All fields are combined with logical 'AND'. */
 export type IntComparisonExp = {
   _eq?: InputMaybe<Scalars['Int']>;
@@ -576,9 +791,30 @@ export type UserVarianceFields = {
   id?: Maybe<Scalars['Float']>;
 };
 
+/** Streaming cursor of the table "file" */
+export type File_StreamCursorInput = {
+  /** Stream column input with initial value */
+  initialValue: File_StreamCursorValueInput;
+  /** cursor ordering */
+  ordering?: InputMaybe<CursorOrdering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type File_StreamCursorValueInput = {
+  createdAt?: InputMaybe<Scalars['timestamptz']>;
+  fileThumbnailUrl?: InputMaybe<Scalars['String']>;
+  fileUrl?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['Int']>;
+  updatedAt?: InputMaybe<Scalars['timestamptz']>;
+};
+
 /** mutation root */
 export type Mutation_Root = {
   __typename?: 'mutation_root';
+  /** delete data from the table: "file" */
+  deleteFile?: Maybe<FileMutationResponse>;
+  /** delete single row from the table: "file" */
+  deleteFileByPk?: Maybe<File>;
   /** delete data from the table: "todo" */
   deleteTodo?: Maybe<TodoMutationResponse>;
   /** delete single row from the table: "todo" */
@@ -587,6 +823,10 @@ export type Mutation_Root = {
   deleteUser?: Maybe<UserMutationResponse>;
   /** delete single row from the table: "user" */
   deleteUserByPk?: Maybe<User>;
+  /** insert data into the table: "file" */
+  insertFile?: Maybe<FileMutationResponse>;
+  /** insert a single row into the table: "file" */
+  insertFileOne?: Maybe<File>;
   /** insert data into the table: "todo" */
   insertTodo?: Maybe<TodoMutationResponse>;
   /** insert a single row into the table: "todo" */
@@ -595,6 +835,12 @@ export type Mutation_Root = {
   insertUser?: Maybe<UserMutationResponse>;
   /** insert a single row into the table: "user" */
   insertUserOne?: Maybe<User>;
+  /** update data of the table: "file" */
+  updateFile?: Maybe<FileMutationResponse>;
+  /** update single row of the table: "file" */
+  updateFileByPk?: Maybe<File>;
+  /** update multiples rows of table: "file" */
+  updateFileMany?: Maybe<Array<Maybe<FileMutationResponse>>>;
   /** update data of the table: "todo" */
   updateTodo?: Maybe<TodoMutationResponse>;
   /** update single row of the table: "todo" */
@@ -607,6 +853,18 @@ export type Mutation_Root = {
   updateUserByPk?: Maybe<User>;
   /** update multiples rows of table: "user" */
   updateUserMany?: Maybe<Array<Maybe<UserMutationResponse>>>;
+};
+
+
+/** mutation root */
+export type Mutation_RootDeleteFileArgs = {
+  where: FileBoolExp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDeleteFileByPkArgs = {
+  id: Scalars['Int'];
 };
 
 
@@ -635,6 +893,20 @@ export type Mutation_RootDeleteUserByPkArgs = {
 
 
 /** mutation root */
+export type Mutation_RootInsertFileArgs = {
+  objects: Array<FileInsertInput>;
+  onConflict?: InputMaybe<FileOnConflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsertFileOneArgs = {
+  object: FileInsertInput;
+  onConflict?: InputMaybe<FileOnConflict>;
+};
+
+
+/** mutation root */
 export type Mutation_RootInsertTodoArgs = {
   objects: Array<TodoInsertInput>;
   onConflict?: InputMaybe<TodoOnConflict>;
@@ -659,6 +931,28 @@ export type Mutation_RootInsertUserArgs = {
 export type Mutation_RootInsertUserOneArgs = {
   object: UserInsertInput;
   onConflict?: InputMaybe<UserOnConflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdateFileArgs = {
+  _inc?: InputMaybe<FileIncInput>;
+  _set?: InputMaybe<FileSetInput>;
+  where: FileBoolExp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdateFileByPkArgs = {
+  _inc?: InputMaybe<FileIncInput>;
+  _set?: InputMaybe<FileSetInput>;
+  pk_columns: FilePkColumnsInput;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdateFileManyArgs = {
+  updates: Array<FileUpdates>;
 };
 
 
@@ -707,6 +1001,12 @@ export type Mutation_RootUpdateUserManyArgs = {
 
 export type Query_Root = {
   __typename?: 'query_root';
+  /** fetch data from the table: "file" */
+  file: Array<File>;
+  /** fetch aggregated fields from the table: "file" */
+  fileAggregate: FileAggregate;
+  /** fetch data from the table: "file" using primary key columns */
+  fileByPk?: Maybe<File>;
   /** fetch data from the table: "todo" */
   todo: Array<Todo>;
   /** fetch aggregated fields from the table: "todo" */
@@ -719,6 +1019,29 @@ export type Query_Root = {
   userAggregate: UserAggregate;
   /** fetch data from the table: "user" using primary key columns */
   userByPk?: Maybe<User>;
+};
+
+
+export type Query_RootFileArgs = {
+  distinctOn?: InputMaybe<Array<FileSelectColumn>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<FileOrderBy>>;
+  where?: InputMaybe<FileBoolExp>;
+};
+
+
+export type Query_RootFileAggregateArgs = {
+  distinctOn?: InputMaybe<Array<FileSelectColumn>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<FileOrderBy>>;
+  where?: InputMaybe<FileBoolExp>;
+};
+
+
+export type Query_RootFileByPkArgs = {
+  id: Scalars['Int'];
 };
 
 
@@ -769,6 +1092,14 @@ export type Query_RootUserByPkArgs = {
 
 export type Subscription_Root = {
   __typename?: 'subscription_root';
+  /** fetch data from the table: "file" */
+  file: Array<File>;
+  /** fetch aggregated fields from the table: "file" */
+  fileAggregate: FileAggregate;
+  /** fetch data from the table: "file" using primary key columns */
+  fileByPk?: Maybe<File>;
+  /** fetch data from the table in a streaming manner: "file" */
+  fileStream: Array<File>;
   /** fetch data from the table: "todo" */
   todo: Array<Todo>;
   /** fetch aggregated fields from the table: "todo" */
@@ -785,6 +1116,36 @@ export type Subscription_Root = {
   userByPk?: Maybe<User>;
   /** fetch data from the table in a streaming manner: "user" */
   userStream: Array<User>;
+};
+
+
+export type Subscription_RootFileArgs = {
+  distinctOn?: InputMaybe<Array<FileSelectColumn>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<FileOrderBy>>;
+  where?: InputMaybe<FileBoolExp>;
+};
+
+
+export type Subscription_RootFileAggregateArgs = {
+  distinctOn?: InputMaybe<Array<FileSelectColumn>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<FileOrderBy>>;
+  where?: InputMaybe<FileBoolExp>;
+};
+
+
+export type Subscription_RootFileByPkArgs = {
+  id: Scalars['Int'];
+};
+
+
+export type Subscription_RootFileStreamArgs = {
+  batchSize: Scalars['Int'];
+  cursor: Array<InputMaybe<File_StreamCursorInput>>;
+  where?: InputMaybe<FileBoolExp>;
 };
 
 
@@ -957,6 +1318,14 @@ export type User_StreamCursorValueInput = {
   updatedAt?: InputMaybe<Scalars['timestamptz']>;
 };
 
+export type AddThumbnailMutationVariables = Exact<{
+  id: Scalars['Int'];
+  fileThumbnailUrl: Scalars['String'];
+}>;
+
+
+export type AddThumbnailMutation = { __typename?: 'mutation_root', updateFileByPk?: { __typename?: 'File', id: number, fileUrl: string, fileThumbnailUrl?: string | null, createdAt: any, updatedAt: any } | null };
+
 export type GetUsersQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -967,6 +1336,21 @@ export type GetAllUserSubscriptionVariables = Exact<{ [key: string]: never; }>;
 
 export type GetAllUserSubscription = { __typename?: 'subscription_root', users: Array<{ __typename?: 'User', id: number, name: string, todos: Array<{ __typename?: 'Todo', id: number, content: string }> }> };
 
+export type SubscribeAllFilesSubscriptionVariables = Exact<{ [key: string]: never; }>;
 
+
+export type SubscribeAllFilesSubscription = { __typename?: 'subscription_root', files: Array<{ __typename?: 'File', id: number, fileUrl: string, fileThumbnailUrl?: string | null, createdAt: any, updatedAt: any }> };
+
+export type CreateFileMutationVariables = Exact<{
+  fileUrl: Scalars['String'];
+}>;
+
+
+export type CreateFileMutation = { __typename?: 'mutation_root', insertFileOne?: { __typename?: 'File', id: number, fileUrl: string, fileThumbnailUrl?: string | null, createdAt: any, updatedAt: any } | null };
+
+
+export const AddThumbnailDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"AddThumbnail"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"id"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"fileThumbnailUrl"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"updateFileByPk"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"_set"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fileThumbnailUrl"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fileThumbnailUrl"}}}]}},{"kind":"Argument","name":{"kind":"Name","value":"pk_columns"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"id"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"fileUrl"}},{"kind":"Field","name":{"kind":"Name","value":"fileThumbnailUrl"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}}]}}]}}]} as unknown as DocumentNode<AddThumbnailMutation, AddThumbnailMutationVariables>;
 export const GetUsersDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetUsers"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"user"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]} as unknown as DocumentNode<GetUsersQuery, GetUsersQueryVariables>;
 export const GetAllUserDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"subscription","name":{"kind":"Name","value":"GetAllUser"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"users"},"name":{"kind":"Name","value":"user"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"todos"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"content"}}]}}]}}]}}]} as unknown as DocumentNode<GetAllUserSubscription, GetAllUserSubscriptionVariables>;
+export const SubscribeAllFilesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"subscription","name":{"kind":"Name","value":"SubscribeAllFiles"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"files"},"name":{"kind":"Name","value":"file"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"limit"},"value":{"kind":"IntValue","value":"2"}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"createdAt"},"value":{"kind":"EnumValue","value":"DESC"}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"fileUrl"}},{"kind":"Field","name":{"kind":"Name","value":"fileThumbnailUrl"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}}]}}]}}]} as unknown as DocumentNode<SubscribeAllFilesSubscription, SubscribeAllFilesSubscriptionVariables>;
+export const CreateFileDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"CreateFile"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"fileUrl"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"insertFileOne"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"object"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"fileUrl"},"value":{"kind":"Variable","name":{"kind":"Name","value":"fileUrl"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"fileUrl"}},{"kind":"Field","name":{"kind":"Name","value":"fileThumbnailUrl"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}}]}}]}}]} as unknown as DocumentNode<CreateFileMutation, CreateFileMutationVariables>;
