@@ -7,6 +7,10 @@ const document = graphql(/* GraphQL */ `
     users: user {
       id
       name
+      todos {
+        id
+        content
+      }
     }
   }
 `);
