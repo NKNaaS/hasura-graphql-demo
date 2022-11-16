@@ -3,8 +3,11 @@ import { useQuery } from "urql";
 import { graphql } from "../gql";
 
 const document = graphql(/* GraphQL */ `
-  query Q {
-    no_queries_available
+  query GetAllUser {
+    users: user {
+      id
+      name
+    }
   }
 `);
 
