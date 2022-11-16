@@ -1,9 +1,9 @@
 import React from "react";
-import { useQuery } from "urql";
+import { useQuery, useSubscription } from "urql";
 import { graphql } from "../gql";
 
 const document = graphql(/* GraphQL */ `
-  query GetAllUser {
+  subscription GetAllUser {
     users: user {
       id
       name
@@ -16,7 +16,7 @@ const document = graphql(/* GraphQL */ `
 `);
 
 export default function Demo() {
-  const [result] = useQuery({
+  const [result] = useSubscription({
     query: document,
   });
 
