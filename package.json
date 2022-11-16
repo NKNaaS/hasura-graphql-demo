@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "codegen-watch": "graphql-codegen --config ./codegen.js --watch"
   },
   "dependencies": {
     "@types/node": "18.11.9",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.13.12",
-    "@graphql-codegen/client-preset": "^1.1.4"
+    "@graphql-codegen/client-preset": "^1.1.4",
+    "@graphql-typed-document-node/core": "^3.1.1"
   }
 }

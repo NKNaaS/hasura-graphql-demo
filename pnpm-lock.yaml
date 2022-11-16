@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@graphql-codegen/cli': ^2.13.12
   '@graphql-codegen/client-preset': ^1.1.4
+  '@graphql-typed-document-node/core': ^3.1.1
   '@types/node': 18.11.9
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.9
@@ -31,6 +32,7 @@ dependencies:
 devDependencies:
   '@graphql-codegen/cli': 2.13.12_mmuvkxbwdnhlnns3fb7cfiqadi
   '@graphql-codegen/client-preset': 1.1.4_graphql@16.6.0
+  '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
 
 packages:
 
