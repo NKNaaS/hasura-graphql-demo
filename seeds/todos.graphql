@@ -1,0 +1,17 @@
+mutation CreateTodos {
+  insertTodo(
+    objects: [
+      { userId: 1, content: "山へ芝刈りに行く" }
+      { userId: 2, content: "川へ洗濯に行く" }
+    ]
+  ) {
+    affected_rows
+    returning {
+      id
+      userId
+      content
+      createdAt
+      updatedAt
+    }
+  }
+}
