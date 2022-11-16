@@ -6,7 +6,7 @@ module.exports = {
       },
     },
   ],
-  documents: ["src/**/*.tsx"],
+  documents: ["src/**/*.{ts,tsx}"],
   ignoreNoDocuments: true, // for better experience with the watcher
   generates: {
     "./src/gql/": {
